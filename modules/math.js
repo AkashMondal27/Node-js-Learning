@@ -6,9 +6,15 @@ function add(a, b) {
     return a-b ;
  }
 
+function multiple(a,b){
+    return a*b ;
+}
+
 // module.exports = add ;
 
 module.exports ={
     add ,
-    subs
+    subs,
+    multiple
 }
+
