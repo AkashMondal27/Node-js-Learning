@@ -18,3 +18,7 @@ module.exports ={
     multiple
 }
 
+
+
+/*Note :- A module is a file that contains reusable code (functions, 
+        variables, objects) which can be exported and used in other files. */
