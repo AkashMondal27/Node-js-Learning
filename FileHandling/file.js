@@ -1,10 +1,10 @@
 const { error } = require('console');
 const fs= require('fs') ;
 
-// synchronous 
+// synchronous   ..Blocking request 
 fs.writeFileSync('./text.text', "This is a text file ");
 
-// Asynchronous
+// Asynchronous   ..... Non Blocking request 
 fs.writeFile('./text.text', "This is a  asynchronous file ", (err)=>{}) ;
 
 
@@ -17,6 +17,7 @@ console.log(result);
   }else{
     console.log(result2)
   }
+  
 });
 
 
