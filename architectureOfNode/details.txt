@@ -1,3 +1,2 @@
-hii ...
-my name is Akash Mondal .
+
 This is a example of a how node js works internally .
