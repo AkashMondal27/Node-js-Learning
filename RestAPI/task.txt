@@ -1,8 +1,11 @@
 REST API  -JSON 
 
-GET/users - List all the users
+GET/users-  retuen  HTML Document Render
+GET/api/users - List all the users -retuen as a json 
 
-GET/ users/1 - Get the user with ID 1
+GET/ users/1 - Get the user with ID 1 - html data
+GET/ api/ users/1 - Get the user with ID 1 -json data
+
 GET/ users/2 - Get the user with ID 2
 
 POST/users -Create mew user 
