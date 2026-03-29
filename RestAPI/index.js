@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-
+const fs = require('fs');
 const users = require('./MOCK_DATA.json');
+
+// create a middleware to parse json data (to push) from the request body
+app.use(express.urlencoded({extended: true}));  // to parse url encoded data
 
 //1st rote to get all users
 
@@ -40,7 +43,19 @@ app.route('/api/users/:id').get((req,res)=>{
 });
 
 
+// example of post request to add new user in json file
 
+app.post('/api/users',(req,res)=>{
+    const body = req.body;  //  sote  the data got from  frontend in body variable
+    console.log("body :",body)
+    users.push({...body ,id:users.length+1});  // push the data in users array
+    fs.writeFile('./MOCK_DATA.json',JSON.stringify(users),(err,data)=>{
+       return res.json({status : "sucess", id: users.length + 1});  // send response to frontend
+    })
+})
+
+// example of put request to update user data in json file
+ 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
