@@ -5,12 +5,27 @@ const users = require('./MOCK_DATA (1).json');
 
 const fs= require("fs");
 
-app.get('/api/users',(req,res)=>{
-    return res .json(users)
-})  
+  
 
 // middleare
-app.use(express.urlencoded({extended:false}));  // to parse url encoded data
+app.use(express.urlencoded({extended:false})); 
+
+// make a middleware using app.use() to log the request method and url
+app.use((req,res,next)=>{
+  console.log('hellow from my middleware 1 ')  // stop the request and response cycle 
+  req.myUsername="mondalAkash"
+   next()  // to pass the control to the next middleware or route handler
+})
+
+app.use((req,res,next)=>{   
+    console.log('hellow from my middleware 2 ' , req.myUsername)  
+        next() 
+})
+
+
+app.get('/api/users',(req,res)=>{
+    return res .json(users)
+})
 
 //create a post request to add new user in json file
 app.post('/api/users',(req,res)=>{
