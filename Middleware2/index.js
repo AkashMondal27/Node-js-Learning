@@ -23,6 +23,7 @@ app.use((req, res, next) => {
 
 
 app.get('/api/users',(req,res)=>{
+    res.setHeader('x-myHeader', "akash")  // create my own header
     return res .json(users)
 })
 
