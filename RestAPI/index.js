@@ -54,7 +54,6 @@ app.post('/api/users',(req,res)=>{
     })
 })
 
-// example of put request to update user data in json file
  
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
