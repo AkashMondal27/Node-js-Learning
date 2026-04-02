@@ -27,7 +27,6 @@ app.get('/api/users',(req,res)=>{
     return res .json(users)
 })
 
-
 app.post('/api/users', (req, res) => {
     const body = req.body;
     console.log(body)
